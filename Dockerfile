@@ -26,11 +26,11 @@ ADD Gemfile ./
 ADD Gemfile.lock ./
 RUN bundle install
 
-ADD package.json yarn.lock ./
+ADD yarn.lock ./
 RUN yarn install --check-files
 
 ADD . $APP_HOME
 
 EXPOSE 3000
 
-ENTRYPOINT bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b 0.0.0.0 -p 3000"
+ENTRYPOINT bash -c "rm -f tmp/pids/server.pid && ./start.sh"
