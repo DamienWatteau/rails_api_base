@@ -10,6 +10,7 @@ services:
       POSTGRES_HOST: 'db'
       SERVEUR_HOST: 'localhost'
       PASSWORD_RESET_URL: '/'
+      RAILS_ENV: 'development'
     ports:
       - 3000:3000
     volumes:
